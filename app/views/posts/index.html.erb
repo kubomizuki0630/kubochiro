@@ -1,0 +1,18 @@
+<%= link_to "ログイン", tweets_index_path %>
+<%= link_to "新規登録", new_user_registration_path %>
+<%= link_to "新規投稿へ", posts_new_path %><br><br>
+<h3>並べ替え</h3>
+ <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+  <%= select_tag("search", options_for_select([['---並べ替え選択---', ''], ['最新の投稿', 'newpost'], ['古い投稿', 'oldpost'], ['シャッフル', 'shuffle']])) %>
+   <%= submit_tag '並べ替える'  %>
+<% end %>
+
+<div class="tweets-container">
+  <% @posts.each do |t| %>
+    <div class="tweet">
+      <%= t.body %><br>
+      <%= t.created_at.to_s(:datetime_jp) %>
+      <br> <br>
+    </div>
+  <% end %>
+</div>

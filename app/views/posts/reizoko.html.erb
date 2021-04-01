@@ -1,0 +1,24 @@
+<%= link_to "冷蔵庫", posts_new_path %>
+<%= link_to "レシピ", tweets_new_path %>
+<div class="tweets-container">
+冷蔵庫の中身
+  <% @reizoko.each do |t| %>
+    <div class="tweet">
+      <%= t %>
+    </div>
+  <% end %>
+</div>
+
+レシピの中身
+<% @recipe.each do |t| %>
+  <div class="tweet">
+    <%= t %>
+  </div>
+<% end %>
+
+足りんやつ
+<% (@recipe - @reizoko).each do |t| %>
+  <div class="tweet">
+  <%= t %>
+  </div>
+<% end %>

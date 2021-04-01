@@ -1,0 +1,17 @@
+<h1>GeekTwitter</h1>
+<h3>新規Tweet</h3>
+<%= form_for @tweet do |f| %>
+  <div class="field">
+    <%= f.label :内容 %>
+    <%= f.text_field :body, :size => 140 %>
+  </div>
+  <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :tagname) do |tag| %>
+    <div class='form-check'>
+        <%= tag.label class: 'form-check-label' do %>
+            <%= tag.check_box class: 'form-check-input' %>
+            <%= tag.text %>
+        <% end %>
+    </div>
+<% end %>
+  <%= f.submit "Tweetする" %>
+<% end %>

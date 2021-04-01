@@ -1,0 +1,54 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  padding: 50px;
+}
+
+.tag{
+  display: inline-block;
+	margin: 0 .1em .6em 0;
+	padding: .2em;
+	line-height: 1;
+	text-decoration: none;
+	color: #0000ee;
+	background-color: #fff;
+	border: 1px solid #0000ee;
+	border-left: 5px solid #0000ee;
+}
+
+.tweet{
+  margin-top: 5px;
+  margin-left: 50px;
+}
+
+.form-check{
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+  margin-left: 32px;
+}
+.form-check-label{
+
+  margin-right: 5px;
+}
+.field-all{
+  margin-left: 50px; 
+  margin-top: auto;
+}
+
+.submit{
+  border: none;  /* 枠線を消す */
+    outline: none; /* クリックしたときに表示される枠線を消す */
+    background: transparent; /* 背景の灰色を消す */
+    color: rgb(0, 208, 255);
+}
+.submit:hover{
+  border: none;  /* 枠線を消す */
+    outline: none; /* クリックしたときに表示される枠線を消す */
+    background: transparent; /* 背景の灰色を消す */
+    color:rgb(36, 146, 170);
+}

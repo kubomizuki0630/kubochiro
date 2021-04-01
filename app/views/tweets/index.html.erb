@@ -1,0 +1,50 @@
+<div class="container">
+ 
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <%= params[:search] %>で検索中 <br>
+    <%= form_tag tweets_index_path, method: :get, class: 'boards__searchForm' do %>
+      <%= select_tag :tag_id,
+                     options_from_collection_for_select(Tag.all, :id, :tagname, params[:tag_id]),
+                     {
+                       prompt: 'タグで絞り込み検索',
+                       onchange: 'submit(this.form);'
+                     }
+      %> <br>
+      <%= link_to '検索クリア', tweets_index_path , class:"serachClearButton" %>
+    <% end %>
+
+<h3>投稿を検索</h3>
+    <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag '検索する'  %>
+    <% end %>
+
+<%= page_entries_info @tweets %>
+    <% @tweets.each do |t| %>
+        <div class="tweet">
+          内容:<%= t.body %><br>
+          tag :<% t.tags.each do |tag| %>
+                <span class="tag"><%= tag.tagname %></span>
+              <% end %>
+        </div>
+      <% end %>
+      <%= paginate @tweets %>
+
+    <div class="field-all">
+    <%= form_for @tweet do |f| %>
+      <div class="field">
+        <%= f.label :内容 %>
+        <%= f.text_field :body, :size => 80 %>
+      </div>
+      <div class='form-check'>
+      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :tagname) do |tag| %>
+            <%= tag.label class: 'form-check-label' do %>
+                <%= tag.check_box class: 'form-check-input' %>
+                <%= tag.text %>
+            <% end %>
+      <% end %>
+      </div>
+            <%= f.submit "投稿する" ,class:"submit" %>
+    <% end %>
+  </div>
+</div>

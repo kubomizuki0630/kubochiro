@@ -1,0 +1,91 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+audio {
+  display: none
+}
+#play {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 1em;
+  cursor: pointer;
+}
+#play1 {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 1em;
+  cursor: pointer;
+}
+#play2 {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 1em;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+header{
+  background-color: #ABD0CE;
+  height: 250px;    //ヘッダーの高さの全体を変更できます
+}
+
+.logoutButton{
+  width: 100%;
+  display: block;
+  text-align: right;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.menu-container{
+  width: 100%;
+  text-align: right;
+}
+
+.menu-item{
+  display: inline-block;      
+  padding:  20px;             
+  height: 10px; 
+}
+
+.matome{
+  list-style: none;
+  color: #7C7877; 
+  margin-left: 10px;
+  background-color: #fff;
+  border: 2px solid #333;
+  color: #333;
+  line-height: 30px;
+  padding: 5px;
+}
+.matome:hover {
+  border-style: dashed;
+}
+
+.userMypage{
+  font-size: 35px;
+  margin-left: 15px; //〇〇さんの左側の余白
+  margin-bottom: 10px;
+}
+
+.userName{
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.yourOnedayDialog{
+  font-size: 20px;
+  margin-left: 60px; //左側の余白
+}
